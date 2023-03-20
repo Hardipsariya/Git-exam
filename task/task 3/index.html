@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TAsk 3</title>
+</head>
+<body>
+    <h3>Sorted Passenger list are : </h3>
+    <p id="output"></p>
+</body>
+<script>
+    const passengers = [
+  {
+    id: 1,
+    passengerName: "Freddie Mercury",
+    isVegetarianOrVegan: false,
+    connectedFlights: 2,
+  },
+  {
+    id: 2,
+    passengerName: "Amy Winehouse",
+    isVegetarianOrVegan: true,
+    connectedFlights: 4,
+  },
+    {
+    id: 3,
+    passengerName: "Kurt Cobain",
+    isVegetarianOrVegan: true,
+    connectedFlights: 3,
+  },
+     {
+    id: 4,
+    passengerName: "Michael Jackson",
+    isVegetarianOrVegan: true,
+    connectedFlights: 1,
+  },
+];
+
+var a = [];
+passengers.forEach(function(obj){
+    a.push(obj.connectedFlights);
+});
+console.log(a);
+
+
+ a = a.sort()
+for(var i =0;i<=passengers.length - 1;i++){
+   for (const j of passengers) {
+    
+        if(a[i] == j.connectedFlights && j.isVegetarianOrVegan == true)
+        {
+             document.getElementById("output").innerHTML += "<br>Name : "+j.passengerName +"<br>isVegetarianOrVegan : "+j.isVegetarianOrVegan +"<br> Connected Flights : "+j.connectedFlights +"<br>";
+        }
+   }
+}
+
+var b = [];
+    passengers.forEach(function(obj){
+        b.push(obj.passengerName);
+    })
+    console.log(b);
+</script>
+</html>
